@@ -2,13 +2,13 @@ const todayDate = new Date();
 let currentHour = Number(todayDate.getHours());
 let currentMinute = Number(todayDate.getMinutes());
 let currentSecond = Number(todayDate.getSeconds());
-let outputHour = document.getElementById("outputHour");
-let outputMinute = document.getElementById("outputMinute");
-let outputSecond = document.getElementById("outputSecond");
+let outputHourElement = document.getElementById("outputHour");
+let outputMinuteElement = document.getElementById("outputMinute");
+let outputSecondElement = document.getElementById("outputSecond");
 
-outputHour.innerHTML=FormatTime(currentHour);
-outputMinute.innerHTML = FormatTime(currentMinute);
-outputSecond.innerHTML = FormatTime(currentSecond);
+outputHourElement.innerHTML=FormatTime(currentHour);
+outputMinuteElement.innerHTML = FormatTime(currentMinute);
+outputSecondElement.innerHTML = FormatTime(currentSecond);
 
 let countId = setInterval(myClock, 1000);
 function myClock() {
@@ -20,13 +20,13 @@ function myClock() {
             currentMinute = 0;
             currentHour++;
         }
-        outputMinute.innerHTML = FormatTime(currentMinute);
+        outputMinuteElement.innerHTML = FormatTime(currentMinute);
     }
-    outputSecond.innerHTML = FormatTime(currentSecond);
+    outputSecondElement.innerHTML = FormatTime(currentSecond);
     if (currentHour == 24) {
         currentHour = 0;
     }
-    outputHour.innerHTML = FormatTime(currentHour);
+    outputHourElement.innerHTML = FormatTime(currentHour);
 }
 function FormatTime(time) {
     let formatedTime;
